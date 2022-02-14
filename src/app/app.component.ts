@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,8 @@ export class AppComponent {
     isFavorite: true
   }
 
-  onFavoriteChanged(){
-    console.log("favorite changed!");
+  onFavoriteChanged(newValue :FavoriteChangedEventArgs){ //this type declaration is only for intellisense and readability
+    console.log("isFavorite value:", newValue);
   }
 
 }
