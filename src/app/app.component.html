@@ -1,3 +1,8 @@
 <like [likeCount]="post.likeCount" [isLiked]="post.isLiked">
 </like>
+<br>
+
+<div *ngIf="post.likeCount > 99; then a else b"></div>
+<ng-template #a>likes 100 or more</ng-template>
+<ng-template #b>likes less then 100</ng-template>
 
