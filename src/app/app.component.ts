@@ -11,7 +11,8 @@ export class AppComponent {
   title = 'hello-world';
   post = {
     title: this.title,
-    isFavorite: true
+    isLiked: true,
+    likeCount: 100
   }
 
   onFavoriteChanged(newValue :FavoriteChangedEventArgs){ //this type declaration is only for intellisense and readability

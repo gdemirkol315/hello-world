@@ -1,5 +1,3 @@
-<favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></favorite>
-<bootstrap-panel>
-    <ng-container class="heading">HEADING</ng-container>
-    <ng-container class="body">BODY</ng-container>
-</bootstrap-panel>
+<like [likeCount]="post.likeCount" [isLiked]="post.isLiked">
+</like>
+
