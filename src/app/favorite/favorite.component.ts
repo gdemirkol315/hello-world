@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'favorite',
@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent implements OnInit {
-  @Input('isFavorite') isFavorite: boolean = false; 
+  @Input('isFavorite') isFavorite: boolean = false;
+  @Output() change = new EventEmitter();
   // input decorator can be used without supplying an argument, then it takes
   // the name of the variable. However 'isFavorite' magic string in input 
   // decorator is useful in this case beacause if we change variable name our
@@ -19,6 +20,7 @@ export class FavoriteComponent implements OnInit {
 
   onClick(){
     this.isFavorite=!this.isFavorite;
+    this.change.emit();
   }
 
 }
