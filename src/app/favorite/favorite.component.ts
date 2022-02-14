@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'favorite',
@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent implements OnInit {
-  isFavorite: boolean = false;
+  @Input('isFavorite') isFavorite: boolean = false; 
+  // input decorator can be used without supplying an argument, then it takes
+  // the name of the variable. However 'isFavorite' magic string in input 
+  // decorator is useful in this case beacause if we change variable name our
+  // app will not be efected from it.
+
   constructor() { }
 
   ngOnInit(): void {
