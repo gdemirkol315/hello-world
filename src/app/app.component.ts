@@ -23,5 +23,15 @@ export class AppComponent {
   onFavoriteChanged(newValue :FavoriteChangedEventArgs){ //this type declaration is only for intellisense and readability
     console.log("isFavorite value:", newValue);
   }
+  
+  onAdd(courseName:string){
+    this.courses.push({name:courseName});
+    console.log(this.courses);
+  }
+
+  onRemove(course:any){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index,1);
+  }
 
 }

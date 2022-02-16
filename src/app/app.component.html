@@ -1,9 +1,19 @@
+<input #courseName>
+<button (click)="onAdd(courseName.value)">add</button>
+
 <ul>
-    <li *ngFor="let course of courses; index as i; even as isEven">
-        <!-- after ; there are extra properties of ngFor which could be used 
-        https://angular.io/api/common/NgForOf#local-variables
-        -->
-        {{i}} - <span *ngIf="isEven">(even)</span> {{course.name}}
-    </li>
+    <table>
+        <tbody *ngFor="let course of courses; index as i">
+            <div *ngIf="i==0">
+                <td>id</td>
+                <td>Course Name</td>
+            </div>
+            <tr>
+                <td>{{i}}</td>
+                <td>{{course.name}}</td>
+                <td><button (click)="onRemove(course)">remove</button></td>
+            </tr>
+        </tbody>
+    </table>
 </ul>
 
