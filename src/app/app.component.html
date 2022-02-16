@@ -1,9 +1,10 @@
 <input #courseName>
 <button (click)="onAdd(courseName.value)">add</button>
-
+<br>
+<button (click)="loadCourses()">Load Courses</button>
 <ul>
     <table>
-        <tbody *ngFor="let course of courses; index as i">
+        <tbody *ngFor="let course of courses; trackBy:trackCourse;index as i;">
             <div *ngIf="i==0">
                 <td>id</td>
                 <td>Course Name</td>
