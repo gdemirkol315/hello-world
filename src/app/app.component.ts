@@ -14,6 +14,11 @@ export class AppComponent {
     isLiked: true,
     likeCount: 100
   }
+  courses = [{name:"Physics"},
+              {name:"Biology"},
+              {name:"Math"},
+              {name:"Computer Science"},
+            ]
 
   onFavoriteChanged(newValue :FavoriteChangedEventArgs){ //this type declaration is only for intellisense and readability
     console.log("isFavorite value:", newValue);

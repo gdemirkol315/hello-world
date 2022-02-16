@@ -1,2 +1,9 @@
-    <panel-switch></panel-switch>
+<ul>
+    <li *ngFor="let course of courses; index as i; even as isEven">
+        <!-- after ; there are extra properties of ngFor which could be used 
+        https://angular.io/api/common/NgForOf#local-variables
+        -->
+        {{i}} - <span *ngIf="isEven">(even)</span> {{course.name}}
+    </li>
+</ul>
 
