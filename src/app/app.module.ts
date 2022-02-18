@@ -12,7 +12,11 @@ import { InputComponent } from './input/input.component';
 import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+<<<<<<< HEAD
 import { ZippyComponent } from './zippy/zippy.component';
+=======
+import { PanelSwitchComponent } from './panel-switch/panel-switch.component';
+>>>>>>> d476482e132c5c32e3f8a0e0bb902351f5b55b49
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { ZippyComponent } from './zippy/zippy.component';
     TitleCasePipe,
     PanelComponent,
     LikeComponent,
+<<<<<<< HEAD
     ZippyComponent
+=======
+    PanelSwitchComponent
+>>>>>>> d476482e132c5c32e3f8a0e0bb902351f5b55b49
   ],
   imports: [
     BrowserModule,
