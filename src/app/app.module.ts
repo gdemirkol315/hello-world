@@ -16,6 +16,7 @@ import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 
 import { PanelSwitchComponent } from './panel-switch/panel-switch.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PanelSwitchComponent } from './panel-switch/panel-switch.component';
     PanelComponent,
     LikeComponent,
     ZippyComponent,
-    PanelSwitchComponent
+    PanelSwitchComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
