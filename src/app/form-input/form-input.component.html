@@ -1,0 +1,31 @@
+<div class="form-group">
+  <label [for]="id">{{name}}:</label>
+  <input
+    [required]="isRequired"
+    [minlength]="minLength"
+    [maxlength]="maxLength"
+    [pattern]="pattern"
+    ngModel #id="ngModel"
+    name="id"
+    [id]="id"
+    [type]="type"
+    class="form-control">
+  <div class="alert alert-danger"
+       *ngIf="id.touched && !id.valid && isRequired">
+    <div *ngIf="id.hasError('required')">
+      Please enter {{name}}.
+    </div>
+    <div *ngIf="id.hasError('minlength') && minLength != undefined">
+      First name should contain at
+      least {{id.getError('minlength').requiredLength}}
+      characters.
+    </div>
+    <div *ngIf="id.hasError('maxlength') && maxLength != undefined">
+      {{name}} cannot be longer
+      than {{id.getError('maxlength').requiredLength}} characters.
+    </div>
+    <div *ngIf="id.hasError('pattern') && pattern != undefined">
+      Please only enter alphabetic characters.
+    </div>
+  </div>
+</div>
