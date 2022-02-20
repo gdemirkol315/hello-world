@@ -18,6 +18,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { PanelSwitchComponent } from './panel-switch/panel-switch.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormInputComponent } from './form-input/form-input.component';
+import { LowercasePipe } from './lowercase.pipe';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FormInputComponent } from './form-input/form-input.component';
     ZippyComponent,
     PanelSwitchComponent,
     ContactFormComponent,
-    FormInputComponent
+    FormInputComponent,
+    LowercasePipe
   ],
   imports: [
     BrowserModule,

@@ -41,25 +41,12 @@
     </select>
   </div>
   <div *ngIf="chosenContactMethod==2 || chosenContactMethod==3">
-    <div class="form-group">
-      <label for="phoneNumber">Phone Number:</label>
-      <input required
-             pattern="[0-9]"
-             ngModel #phoneNumber="ngModel"
-             name="phoneNumber"
-             id="phoneNumber"
-             type="number"
-             class="form-control">
-      <div class="alert alert-danger"
-           *ngIf="phoneNumber.touched && !phoneNumber.valid">
-        <div *ngIf="phoneNumber.hasError('required')">
-          Please enter phone number.
-        </div>
-        <div *ngIf="phoneNumber.hasError('pattern')">
-          Please only enter a valid phone number.
-        </div>
-      </div>
-    </div>
+    <form-input
+      isRequired="true"
+      name="Phone Number"
+      type="number"
+      pattern="[0-9]*">
+    </form-input>
   </div>
   <button class="btn btn-primary" [disabled]="f.invalid">Submit</button>
 </form>

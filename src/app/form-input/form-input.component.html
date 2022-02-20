@@ -13,7 +13,7 @@
   <div class="alert alert-danger"
        *ngIf="id.touched && !id.valid && isRequired">
     <div *ngIf="id.hasError('required')">
-      Please enter {{name}}.
+      Please enter a {{name|lowercase}}.
     </div>
     <div *ngIf="id.hasError('minlength') && minLength != undefined">
       First name should contain at
@@ -21,7 +21,7 @@
       characters.
     </div>
     <div *ngIf="id.hasError('maxlength') && maxLength != undefined">
-      {{name}} cannot be longer
+      {{name|lowercase}} cannot be longer
       than {{id.getError('maxlength').requiredLength}} characters.
     </div>
     <div *ngIf="id.hasError('pattern') && pattern != undefined">
