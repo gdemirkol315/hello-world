@@ -1,24 +1,25 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses.component';
-import { CourseComponent } from './course/course.component';
-import { CoursesService } from './courses.service';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { InputComponent } from './input/input.component';
-import { TitleCasePipe } from './title-case.pipe';
-import { PanelComponent } from './panel/panel.component';
-import { LikeComponent } from './like/like.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {CoursesComponent} from './courses.component';
+import {CourseComponent} from './course/course.component';
+import {CoursesService} from './courses.service';
+import {FavoriteComponent} from './favorite/favorite.component';
+import {InputComponent} from './input/input.component';
+import {TitleCasePipe} from './title-case.pipe';
+import {PanelComponent} from './panel/panel.component';
+import {LikeComponent} from './like/like.component';
 
-import { ZippyComponent } from './zippy/zippy.component';
+import {ZippyComponent} from './zippy/zippy.component';
 
-import { PanelSwitchComponent } from './panel-switch/panel-switch.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { FormInputComponent } from './form-input/form-input.component';
-import { LowercasePipe } from './lowercase.pipe';
+import {PanelSwitchComponent} from './panel-switch/panel-switch.component';
+import {ContactFormComponent} from './contact-form/contact-form.component';
+import {FormInputComponent} from './form-input/form-input.component';
+import {LowercasePipe} from './lowercase.pipe';
+import {SignupFormComponent} from "./signup-form/signup-form.component";
 
 
 @NgModule({
@@ -34,13 +35,15 @@ import { LowercasePipe } from './lowercase.pipe';
     ZippyComponent,
     PanelSwitchComponent,
     ContactFormComponent,
+    SignupFormComponent,
     FormInputComponent,
     LowercasePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     //dependency injection - singleton pattern
@@ -50,4 +53,5 @@ import { LowercasePipe } from './lowercase.pipe';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
