@@ -8,6 +8,7 @@
       class="form-control">
     <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
       <p *ngIf="username?.hasError('required')">Please enter username.</p>
+      <p *ngIf="username?.hasError('cannotContainSpace')">There cannot be a space character in username.</p>
       <p *ngIf="username?.hasError('minlength')">Username should contain
         minimum {{username?.getError('minlength').requiredLength}} chars.
       </p>
