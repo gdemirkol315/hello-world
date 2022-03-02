@@ -6,7 +6,9 @@
       id="username"
       type="text"
       class="form-control">
-    <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+    <div *ngIf="username?.pending">It is loading...</div>
+    <div *ngIf=" username?.touched && username?.invalid
+    " class="alert alert-danger">
       <p *ngIf="username?.hasError('required')">Please enter username.</p>
       <p *ngIf="username?.hasError('cannotContainSpace')">There cannot be a space character in username.</p>
       <p *ngIf="username?.hasError('shouldBeUnique')">Username already taken.</p>
