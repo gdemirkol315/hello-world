@@ -20,6 +20,7 @@ import {ContactFormComponent} from './contact-form/contact-form.component';
 import {FormInputComponent} from './form-input/form-input.component';
 import {LowercasePipe} from './lowercase.pipe';
 import {SignupFormComponent} from "./signup-form/signup-form.component";
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {SignupFormComponent} from "./signup-form/signup-form.component";
     ContactFormComponent,
     SignupFormComponent,
     FormInputComponent,
-    LowercasePipe
+    LowercasePipe,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
