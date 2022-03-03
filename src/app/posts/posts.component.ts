@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Utils} from "app/common/utils/Utils";
+import {Utils} from "app/common/utils/utils";
 
 @Component({
   selector: 'posts',
