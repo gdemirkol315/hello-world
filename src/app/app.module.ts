@@ -20,7 +20,9 @@ import {ContactFormComponent} from './contact-form/contact-form.component';
 import {FormInputComponent} from './form-input/form-input.component';
 import {LowercasePipe} from './lowercase.pipe';
 import {SignupFormComponent} from "./signup-form/signup-form.component";
-import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import {NewCourseFormComponent} from './new-course-form/new-course-form.component';
+import {PostsComponent} from './posts/posts.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -39,13 +41,15 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
     SignupFormComponent,
     FormInputComponent,
     LowercasePipe,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     //dependency injection - singleton pattern
