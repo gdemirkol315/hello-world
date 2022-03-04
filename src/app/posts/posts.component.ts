@@ -11,36 +11,37 @@ export class PostsComponent implements OnInit {
 
   posts: any;
 
-  constructor(private service:PostService) {
+  constructor(private service: PostService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     //use http services always with onInit not in constructor
-    this.http.get(this.url)
+    this.service.getPosts()
       .subscribe(response => {
         this.posts = response;
       })
   }
+
   createPost(input: HTMLInputElement) {
     let post: any = {title: input.value};
     input.value = '';
 
-    this.http.post<any>(this.url, JSON.stringify(post))
+    this.service.createPost(post)
       .subscribe(response => {
         post.id = response.id;
         this.posts.splice(0, 0, post)
       });
   }
 
-  updatePost(post: any){
-    this.http.patch(this.url + '/' + post.id,JSON.stringify({isRead:true}))
+  updatePost(post: any) {
+    this.service.updatePost(post)
       .subscribe();
   }
 
-  deletePost(post: any){
-    this.http.delete(this.url + '/' + post.id)
-      .subscribe(response=>{
-        Utils.FindAndDeleteFromArray(this.posts,post);
+  deletePost(post: any) {
+    this.service.deletePost(post)
+      .subscribe(response => {
+        Utils.FindAndDeleteFromArray(this.posts, post);
       })
   }
 

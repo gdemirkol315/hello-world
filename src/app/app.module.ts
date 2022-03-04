@@ -4,7 +4,6 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {CoursesComponent} from './courses.component';
 import {CourseComponent} from './course/course.component';
 import {CoursesService} from './services/courses.service';
 import {FavoriteComponent} from './favorite/favorite.component';
