@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 
@@ -23,6 +23,7 @@ import {NewCourseFormComponent} from './new-course-form/new-course-form.componen
 import {PostsComponent} from './posts/posts.component';
 import {HttpClientModule} from "@angular/common/http";
 import {PostService} from "./services/post.service";
+import {AppErrorHandler} from "./common/validators/app-error-handler";
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {PostService} from "./services/post.service";
     //there will be one CoursesService instance which will be used
     //everywhere where it is called in our app
     CoursesService,
-    PostService
+    PostService,
+    {provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })

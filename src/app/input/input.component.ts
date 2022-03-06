@@ -1,5 +1,5 @@
-import { TitleCasePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {TitleCasePipe} from '../common/pipes/title-case.pipe';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  title: string="";
+  title: string = "";
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

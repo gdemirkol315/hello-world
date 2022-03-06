@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {LowercasePipe} from "../common/pipes/lowercase.pipe";
 
 @Component({
   selector: 'form-input',
