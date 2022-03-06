@@ -1,3 +1,4 @@
+import {RouterModule} from "@angular/router";
 import {ErrorHandler, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
@@ -24,7 +25,11 @@ import {PostsComponent} from './posts/posts.component';
 import {HttpClientModule} from "@angular/common/http";
 import {PostService} from "./services/post.service";
 import {AppErrorHandler} from "./common/validators/app-error-handler";
-import { GitFollowersComponent } from './git-followers/git-followers.component';
+import {GitFollowersComponent} from './git-followers/git-followers.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {HomeComponent} from './home/home.component';
+import {GithubProfileComponent} from './github-profile/github-profile.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 
 @NgModule({
@@ -44,14 +49,40 @@ import { GitFollowersComponent } from './git-followers/git-followers.component';
     LowercasePipe,
     NewCourseFormComponent,
     PostsComponent,
-    GitFollowersComponent
+    GitFollowersComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'followers/:username',
+        component: GithubProfileComponent
+      },
+      {
+        path: 'followers',
+        component: GitFollowersComponent
+      },
+      {
+        path: 'posts',
+        component: PostsComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
+    ])
   ],
   providers: [
     //dependency injection - singleton pattern
