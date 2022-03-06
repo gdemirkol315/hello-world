@@ -24,6 +24,7 @@ import {PostsComponent} from './posts/posts.component';
 import {HttpClientModule} from "@angular/common/http";
 import {PostService} from "./services/post.service";
 import {AppErrorHandler} from "./common/validators/app-error-handler";
+import { GitFollowersComponent } from './git-followers/git-followers.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {AppErrorHandler} from "./common/validators/app-error-handler";
     FormInputComponent,
     LowercasePipe,
     NewCourseFormComponent,
-    PostsComponent
+    PostsComponent,
+    GitFollowersComponent
   ],
   imports: [
     BrowserModule,
