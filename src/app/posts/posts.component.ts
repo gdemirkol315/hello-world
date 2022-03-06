@@ -19,7 +19,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     //use http services always with onInit not in constructor
-    this.service.getPosts()
+    this.service.getAll()
       .subscribe(response => {
         this.posts = response;
       });
@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
     let post: any = {title: input.value};
     input.value = '';
 
-    this.service.createPosts(post)
+    this.service.create(post)
       .subscribe((response: AppError) => {
         post.id = 1 //response.id fails;
         this.posts.splice(0, 0, post)
@@ -41,7 +41,7 @@ export class PostsComponent implements OnInit {
   }
 
   updatePost(post: any) {
-    this.service.updatePosts(post)
+    this.service.update(post)
       .subscribe(response => {
         },
         (error: AppError) => {
@@ -50,7 +50,7 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post: any) {
-    this.service.deletePosts(post)
+    this.service.delete(post)
       .subscribe(response => {
         Utils.FindAndDeleteFromArray(this.posts, post);
       }, (error: AppError) => {
