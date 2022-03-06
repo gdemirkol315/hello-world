@@ -20,9 +20,7 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     //use http services always with onInit not in constructor
     this.service.getAll()
-      .subscribe(response => {
-        this.posts = response;
-      });
+      .subscribe(post => this.posts = post);
   }
 
   createPost(input: HTMLInputElement) {
@@ -51,13 +49,12 @@ export class PostsComponent implements OnInit {
 
   deletePost(post: any) {
     this.service.delete(post)
-      .subscribe(response => {
-        Utils.FindAndDeleteFromArray(this.posts, post);
-      }, (error: AppError) => {
-        if (error instanceof NotFoundError) {
-          alert('This post has already been deleted!')
-        } else throw error;
-      })
+      .subscribe(() => Utils.FindAndDeleteFromArray(this.posts, post),
+        (error: AppError) => {
+          if (error instanceof NotFoundError) {
+            alert('This post has already been deleted!')
+          } else throw error;
+        })
   }
 
 }

@@ -6,9 +6,6 @@ import {AppError} from "../common/validators/app-error";
 import {NotFoundError} from "../common/validators/not-found-error";
 import {BadInput} from "../common/validators/bad-input";
 
-@Injectable({
-  providedIn: 'root'
-})
 export class DataService {
 
 
