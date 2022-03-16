@@ -4,7 +4,8 @@
   <li class="media">
     <img class="mr-3 avatar" src={{follower.avatar_url}}>
     <div class="media-body">
-      <h5 class="mt-0 mb-1"><a href="followers/:{{follower.login}}">{{follower.login}}</a></h5>
+      <h5 class="mt-0 mb-1"><a
+        [routerLink]="['/followers','{{follower.id}}','{{follower.login}}']">{{follower.login}}</a></h5>
       <a href={{follower.html_url}}>{{follower.html_url}}</a>
     </div>
   </li>
