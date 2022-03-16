@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GitFollowersService} from "../git-followers.service";
 import {ActivatedRoute} from "@angular/router";
-import {combineLatest, Observable} from 'rxjs';
+import {combineLatest, Observable, map, switchMap} from 'rxjs';
 
 @Component({
   selector: 'git-followers',
@@ -22,16 +22,14 @@ export class GitFollowersComponent implements OnInit {
     combineLatest([
       this.route.paramMap,
       this.route.queryParamMap])
-      .subscribe(combined => {
-        let id = combined[0].get('id');
-        let page = combined[1].get('page');
-        // we could get use id, page in service to filter
-        // i.e. this.service.getAll({id: id, page: page})
-        this.service.getAll()
-          .subscribe(followers => this.followers = followers);
-      });
-
-
+      .pipe(
+        switchMap(combine => {
+          const paramsResult = combine[0].get('...');
+          const queryResult = combine[1].get('...');
+          return this.service.getAll();
+        })
+      )
+      .subscribe(followers => (this.followers = followers));
   }
 
 }
