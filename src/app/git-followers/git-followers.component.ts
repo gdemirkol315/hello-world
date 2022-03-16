@@ -24,6 +24,9 @@ export class GitFollowersComponent implements OnInit {
       this.route.queryParamMap])
       .pipe(
         switchMap(combine => {
+          //this part is for using queries on page dynamically
+          //(there should be also service part which uses below queries)
+          //i.e. this.service.getAll(paramsResult, queryResult);
           const paramsResult = combine[0].get('...');
           const queryResult = combine[1].get('...');
           return this.service.getAll();
